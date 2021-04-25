@@ -1,0 +1,24 @@
+<%- include("header") %>
+    <div class="box" id="heading">
+        <h1>
+            <%= Title %>
+        </h1>
+    </div>
+
+    <div class="box">
+
+        <%for(let i of addedItems){%>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= i %>
+                </p>
+
+            </div>
+            <% } %>
+                <form class="item" action="/" method="post">
+                    <input autofocus type="text" name="newItem" placeholder="enter the new Item" autocomplete="off">
+                    <button type="submit" name="submitButton" value="<%= Title %>">+</button>
+                </form>
+    </div>
+    <%- include("footer") %>
