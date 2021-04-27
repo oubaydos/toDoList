@@ -8,13 +8,16 @@
     <div class="box">
 
         <%for(let i of addedItems){%>
-            <div class="item">
-                <input type="checkbox">
-                <p>
-                    <%= i %>
-                </p>
+            <form action="/delete" method="post">
+                <div class="item">
+                    <input type="checkbox" name="checkBox" value="<%= i._id %> <%= Title %>" onChange="this.form.submit()">
+                    <p>
+                        <%= i.name %>
+                    </p>
 
-            </div>
+                </div>
+            </form>
+
             <% } %>
                 <form class="item" action="/" method="post">
                     <input autofocus type="text" name="newItem" placeholder="enter the new Item" autocomplete="off">
